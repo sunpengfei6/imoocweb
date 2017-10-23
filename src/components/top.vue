@@ -1,43 +1,46 @@
 <template>
-    <div class="top">
+    <div>
+        <div class="top">
 
-        <div class="img">
-            <img src="../assets/1.jpg" width="160">
+            <div class="img">
+                <img src="../assets/1.jpg" width="160">
+            </div>
+
+            <div class="menu1">
+                <ul>
+                    <li><a href="http://www.imooc.com/course/list">课程 </a></li>
+                    <li><a href="#">职业路径</a></li>
+                    <li><a href="#">实战</a></li>
+                    <li><a href="#">猿问</a></li>
+                    <li><a href="#">手记</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <a href="#">前端入门</a>
+                <a href="#">Java入门</a>
+            </div>
+
+            <div class="download"><a @mouseover="ondownload" @mouseout="offdownload">下载APP</a></div>
+
+            <div class="img_1"><img src="../assets/2.png" width="35px"></div>
+
+            <div class="shopcar">
+                <a @mouseover="onshopcar" @mouseout="offshopcar">购物车</a>
+            </div>
         </div>
-
-        <div class="menu1">
-            <ul>
-                <li><a href="http://www.imooc.com/course/list">课程 </a></li>
-                <li><a href="#">职业路径</a></li>
-                <li><a href="#">实战</a></li>
-                <li><a href="#">猿问</a></li>
-                <li><a href="#">手记</a></li>
-            </ul>
-        </div>
-
-        <div class="search">
-            <a href="#">前端入门</a>
-            <a href="#">Java入门</a>
-        </div>
-
-        <div class="download"><a @mouseover="ondownload" @mouseout="offdownload">下载APP</a></div>
-
-        <div class="img_1"><img src="../assets/2.png" width="35px"></div>
-
-        <div class="shopcar">
-            <a @mouseover="onshopcar" @mouseout="offshopcar">购物车</a>
-        </div>
+        <div v-show="isdownload" class="idownload"></div>
+        <div v-show="isshopcar" class="ishopcar"></div>
     </div>
-
 </template>
 
 <script>
     export default {
-        components:{},
+        components: {},
         data(){
             return {
-                isshopcar:false,
-                isdownload:false
+                isshopcar: false,
+                isdownload: false
             }
         },
         methods: {
@@ -95,54 +98,79 @@
     .menu1 a:hover, .menu1 a:active {
         color: #000;
     }
-    .search{
+
+    .search {
         padding-left: 100px;
         height: 72px;
-        width:200px;
+        width: 200px;
         float: left;
         line-height: 72px;
     }
-    .shopcar{
+
+    .shopcar {
         padding-right: 50px;
         height: 72px;
         float: right;
         line-height: 72px;
     }
-    .search a{
+
+    .search a {
         height: 35px;
         border: 1px solid;
         border-radius: 35px;
         background: #eee;
         text-decoration: none;
         font-size: smaller;
-        padding:5px 10px;
+        padding: 5px 10px;
         color: #666;
         /*float: left;*/
     }
-    .download{
+
+    .download {
         float: left;
         width: 150px;
         height: 72px;
         line-height: 72px;
     }
-    .download a{
+
+    .download a {
         padding-left: 50px;
         color: #333;
 
     }
-    .shopcar a{
+
+    .shopcar a {
         height: 35px;
         border: 1px solid;
         border-radius: 35px;
         background: #eee;
         text-decoration: none;
         font-size: medium;
-        padding:10px 30px;
+        padding: 10px 30px;
         color: #666;
     }
-    .img_1{
+
+    .img_1 {
         padding: 20px 50px;
         float: right;
+    }
+
+    .ishopcar {
+        width: 350px;
+        height: 400px;
+        margin-left: 830px;
+        background-color: #888888;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .idownload {
+        width: 300px;
+        height: 150px;
+        margin-left: 710px;
+        position: absolute;
+        background-color: #2b333b;
+        z-index: 1;
     }
 
 </style>

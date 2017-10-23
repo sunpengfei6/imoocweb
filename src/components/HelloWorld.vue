@@ -3,15 +3,18 @@
         <div class="top">
             <iTop></iTop>
         </div>
-        <div></div>
+        <div class="middle">
+            <iMiddle></iMiddle>
+        </div>
 
     </div>
 </template>
 
 <script>
     import iTop from './top.vue'
+    import iMiddle from './middle.vue'
     export default {
-        components:{iTop},
+        components:{iTop,iMiddle},
 
         data () {
             return {
@@ -23,6 +26,6 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 
 </style>
