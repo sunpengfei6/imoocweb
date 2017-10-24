@@ -38,7 +38,14 @@
             </div>
         </div>
         <div class="content">
-            <img src="../assets/2.jpg">
+            <!--<img src="../assets/2.jpg">-->
+            <rd-swipe :swipe="swipe" style="width: 936px">
+                <div
+                        class="rd-swipe-item"
+                        :style="{ 'background-image': `url(${img})` }"
+                        v-for="(img, index) in imgs">
+                </div>
+            </rd-swipe>
             <div class="banner">
                 <a>
                     <p class="tit">Web前端工程师</p>
@@ -67,13 +74,22 @@
 </template>
 
 <script>
+
+    import rdSwipe from '../../node_modules/vue-slide/vue-slide'
     export default {
-        components: {},
+        components: {rdSwipe},
         data(){
             return {
                 isFrontEnd: false,
                 isBackEnd: false,
                 isMoveEnd: false,
+                swipe: {
+                    activeIndex: 0
+                },
+                imgs: [
+                    'http://img1.sycdn.imooc.com/59edd41f00011c8409360316.jpg',
+                    'http://img1.sycdn.imooc.com/59eeedb4000129a309360316.jpg'
+                ]
             }
         },
         methods: {
