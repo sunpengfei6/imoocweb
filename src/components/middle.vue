@@ -39,13 +39,15 @@
         </div>
         <div class="content">
             <!--<img src="../assets/2.jpg">-->
-            <rd-swipe :swipe="swipe" style="width: 936px">
-                <div
-                        class="rd-swipe-item"
-                        :style="{ 'background-image': `url(${img})` }"
-                        v-for="(img, index) in imgs">
-                </div>
-            </rd-swipe>
+            <div class="swipe">
+                <rd-swipe :swipe="swipe">
+                    <div
+                            class="rd-swipe-item"
+                            :style="{ 'background-image': `url(${img})` }"
+                            v-for="(img, index) in imgs">
+                    </div>
+                </rd-swipe>
+            </div>
             <div class="banner">
                 <a>
                     <p class="tit">Web前端工程师</p>
@@ -195,43 +197,54 @@
         text-decoration: none;
         color: #555;
         margin-left: 40px;
+        z-index: 0;
     }
-    .middle{
-        width:1152px;
+
+    .middle {
+        width: 1152px;
         margin: 30px auto;
     }
-    .content{
-        width:936px;
-        height:456px;
+
+    .content {
+        width: 936px;
+        height: 456px;
         background: #fff;
         float: right;
         position: relative;
     }
-    .content img{
+    .swipe{
+        width: 936px;
+        z-index: 9;
+    }
+
+    .content img {
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
     }
-    .banner{
-        width:936px;
-        height:140px;
+
+    .banner {
+        width: 936px;
+        height: 140px;
         background-color: white;
     }
-    .banner a{
+
+    .banner a {
         width: 180px;
         height: 128px;
         display: block;
         float: left;
     }
-    .tit{
+
+    .tit {
         margin-top: 50px;
         font-size: large;
         color: black;
     }
-    .desc{
+
+    .desc {
         font-size: smaller;
         color: #888888;
     }
-
 
 
 </style>
