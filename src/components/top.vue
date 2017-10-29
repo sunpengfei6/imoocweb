@@ -29,7 +29,10 @@
                 <a @mouseover="onshopcar" @mouseout="offshopcar">购物车</a>
             </div>
         </div>
-        <div v-show="isdownload" class="idownload"></div>
+        <div v-show="isdownload" class="idownload">
+            <img src="../assets/3.png" >
+            <p></p>
+        </div>
         <div v-show="isshopcar" class="ishopcar"></div>
     </div>
 </template>
@@ -159,7 +162,7 @@
         width: 350px;
         height: 400px;
         margin-left: 830px;
-        background-color: #888888;
+        background-color: #fff;
         position: absolute;
         z-index: 1;
     }
@@ -169,8 +172,14 @@
         height: 150px;
         margin-left: 710px;
         position: absolute;
-        background-color: #2b333b;
-        z-index: 1;
+        background-color: #fff;
+        /*box-shadow: 0 5px 20px #aaa;*/
+        z-index: 9999;
+    }
+    .idownload img{
+        width: 108px;
+        padding: 20px;
+        float: left;
     }
 
 </style>
