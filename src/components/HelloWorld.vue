@@ -6,6 +6,9 @@
         <div class="middle">
             <iMiddle></iMiddle>
         </div>
+        <div>
+
+        </div>
 
     </div>
 </template>
@@ -18,14 +21,18 @@
 
         data () {
             return {
-
             }
         },
         methods:{}
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+    .top{
+        box-shadow: 0 5px 20px #aaa;
+    }
+    .middle{
+        box-shadow: 0 5px 20px #aaa;
+    }
 
 </style>

@@ -21,19 +21,23 @@
                 <a href="#">Java入门</a>
             </div>
 
-            <div class="download"><a @mouseover="ondownload" @mouseout="offdownload">下载APP</a></div>
+            <div class="download" @mouseover="ondownload" @mouseout="offdownload"><a>下载APP</a></div>
 
             <div class="img_1"><img src="../assets/2.png" width="35px"></div>
 
-            <div class="shopcar">
-                <a @mouseover="onshopcar" @mouseout="offshopcar">购物车</a>
+            <div class="shopcar" @mouseover="onshopcar" @mouseout="offshopcar">
+                <a >购物车</a>
             </div>
         </div>
-        <div v-show="isdownload" class="idownload">
-            <img src="../assets/3.png" >
-            <p></p>
+        <div v-show="isdownload" class="idownload" @mouseover="ondownload" @mouseout="offdownload">
+            <img src="../assets/3.png">
+            <div>
+                <p>扫描在线慕课网APP</p>
+                <a href="#">App store下载</a>
+                <a href="#">Android下载</a>
+            </div>
         </div>
-        <div v-show="isshopcar" class="ishopcar"></div>
+        <div v-show="isshopcar" class="ishopcar" @mouseover="onshopcar" @mouseout="offshopcar"></div>
     </div>
 </template>
 
@@ -139,7 +143,6 @@
     .download a {
         padding-left: 50px;
         color: #333;
-
     }
 
     .shopcar a {
@@ -161,25 +164,42 @@
     .ishopcar {
         width: 350px;
         height: 400px;
-        margin-left: 830px;
+        left: 830px;
         background-color: #fff;
         position: absolute;
         z-index: 1;
     }
-
     .idownload {
         width: 300px;
         height: 150px;
-        margin-left: 710px;
+        left: 710px;
         position: absolute;
         background-color: #fff;
         /*box-shadow: 0 5px 20px #aaa;*/
         z-index: 9999;
     }
-    .idownload img{
+    .idownload img {
         width: 108px;
         padding: 20px;
         float: left;
     }
+    .idownload p{
 
+    }
+    .idownload a{
+        width: 132px;
+        height: 36px;
+        line-height: 36px;
+        margin-top: 8px;
+        border-radius: 18px;
+        background: #4d555d;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        float:right;
+        position: relative;
+    }
+    .idownload a:hover{
+        background: #000;
+    }
 </style>

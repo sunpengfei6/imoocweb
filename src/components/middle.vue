@@ -40,13 +40,14 @@
         <div class="content">
             <!--<img src="../assets/2.jpg">-->
             <div class="swipe">
-                <rd-swipe :swipe="swipe">
-                    <div
-                            class="rd-swipe-item"
-                            :style="{ 'background-image': `url(${img})` }"
-                            v-for="(img, index) in imgs">
-                    </div>
-                </rd-swipe>
+                <ul>
+                    <li>
+                        <a href=""><img src="../assets/2.jpg"></a>
+                    </li>
+                </ul>
+                <div class="bullet">
+                    <span></span>
+                </div>
             </div>
             <div class="banner">
                 <a>
@@ -77,23 +78,19 @@
 
 <script>
 
-    import rdSwipe from '../../node_modules/vue-slide/vue-slide'
+//    import rdSwipe from '../../node_modules/vue-slide/vue-slide'
     export default {
-        components: {rdSwipe},
+
+        components: {},
+
         data(){
             return {
                 isFrontEnd: false,
                 isBackEnd: false,
                 isMoveEnd: false,
-                swipe: {
-                    activeIndex: 0
-                },
-                imgs: [
-                    'http://img1.sycdn.imooc.com/59edd41f00011c8409360316.jpg',
-                    'http://img1.sycdn.imooc.com/59eeedb4000129a309360316.jpg'
-                ]
             }
         },
+
         methods: {
             onFrontEnd(){
                 this.isFrontEnd = true
@@ -146,6 +143,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+    *{
+        padding:0;
+        margin: 0;
+    }
     .menu-box {
         width: 216px;
         height: 444px;
@@ -156,13 +158,20 @@
         float: right;
         position: absolute;
     }
-
-    ul {
+    .swipe ul{
+        margin: 0;
+        padding: 0;
+    }
+    .swipe li{
+        margin: 0;
+        padding: 0;
+    }
+    .menu-box ul {
         margin: 0;
         padding: 0;
     }
 
-    li {
+    .menu-box ul li {
         padding: 20px;
         margin-left: 10px;
         color: rgba(255, 255, 255, .3);
@@ -172,9 +181,9 @@
         list-style: none;
     }
 
-    li:hover {
+    .menu-box ul li:hover {
         color: white;
-        background-color: rgba(255, 255, 255, .6);
+        background-color: rgba(255, 255, 255, .3);
         cursor: pointer;
     }
 
@@ -186,7 +195,7 @@
         float: left;
         left: 216px;
         top: 0;
-        z-index: 1000;
+        z-index: 999;
     }
 
     .inner p {
@@ -212,7 +221,8 @@
         float: right;
         position: relative;
     }
-    .swipe{
+
+    .swipe {
         width: 936px;
         z-index: 9;
     }
