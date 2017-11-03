@@ -50,23 +50,23 @@
                 </div>
             </div>
             <div class="banner">
-                <a>
+                <a href="#">
                     <p class="tit">Web前端工程师</p>
                     <p class="desc">互联网最火爆的技术</p>
                 </a>
-                <a>
+                <a href="#">
                     <p class="tit">Java工程师</p>
                     <p class="desc">健壮、安全、适用广泛</p>
                 </a>
-                <a>
+                <a href="#">
                     <p class="tit">Android工程师</p>
                     <p class="desc">移动设备市场份额第一</p>
                 </a>
-                <a>
+                <a href="#">
                     <p class="tit">PHP工程师</p>
                     <p class="desc">世界上最好的语言</p>
                 </a>
-                <a>
+                <a href="#">
                     <p class="tit">iOS工程师</p>
                     <p class="desc">可能是全球最好的系统</p>
                 </a>
@@ -236,6 +236,7 @@
         width: 936px;
         height: 140px;
         background-color: white;
+        display: block;
     }
 
     .banner a {
@@ -243,6 +244,7 @@
         height: 128px;
         display: block;
         float: left;
+        text-decoration: none;
     }
 
     .tit {
