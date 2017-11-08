@@ -6,9 +6,9 @@
         <div class="middle">
             <iMiddle></iMiddle>
         </div>
-        <div>
-
-        </div>
+        <template>
+            <Slider v-model="value" range></Slider>
+        </template>
 
     </div>
 </template>
@@ -21,6 +21,7 @@
 
         data () {
             return {
+
             }
         },
         methods:{}
