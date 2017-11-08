@@ -18,7 +18,7 @@
 
             <div class="search">
                 <a href="#">前端入门</a>
-                <a href="#">Java入门</a>
+                <!--<a href="#">Java入门</a>-->
             </div>
 
             <div class="download" @mouseover="ondownload" @mouseout="offdownload"><a>下载APP</a></div>
