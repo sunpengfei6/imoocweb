@@ -30,7 +30,7 @@
             </div>
         </div>
         <div v-show="isdownload" class="idownload" @mouseover="ondownload" @mouseout="offdownload">
-            <img src="../assets/3.png">
+            <img src="../assets/3.png" style="height: 108px">
             <div>
                 <p>扫描在线慕课网APP</p>
                 <a href="#">App store下载</a>
@@ -179,8 +179,8 @@
         z-index: 9999;
     }
     .idownload img {
-        width: 108px;
-        padding: 20px;
+        /*width: 108px;*/
+        margin: 20px;
         float: left;
     }
     .idownload p{
@@ -190,8 +190,9 @@
         width: 132px;
         height: 36px;
         line-height: 36px;
-        margin-top: 8px;
+        margin-top: 10px;
         border-radius: 18px;
+        margin-right: 20px;
         background: #4d555d;
         color: #fff;
         text-decoration: none;
