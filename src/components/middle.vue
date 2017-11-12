@@ -40,13 +40,15 @@
         <div class="content">
             <!--<img src="../assets/2.jpg">-->
             <div class="swipe">
-                <ul>
-                    <li>
-                        <a href=""><img src="../assets/2.jpg"></a>
-                    </li>
-                </ul>
-                <div class="bullet">
-                    <span></span>
+                <div class="swipeshow">
+                    <ul>
+                        <li v-for="(img123,index) in imgArray" v-show="index===mark" :key="index">
+                            <img :src='img123'>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bar">
+                    <span v-for="(item,index) in imgArray" :class="{ 'active':index===mark }" :key="index"></span>
                 </div>
             </div>
             <div class="banner">
@@ -78,13 +80,19 @@
 
 <script>
 
-//    import rdSwipe from '../../node_modules/vue-slide/vue-slide'
+    //    import rdSwipe from '../../node_modules/vue-slide/vue-slide'
     export default {
 
         components: {},
 
         data(){
             return {
+                mark: 0,
+                imgArray: [
+                    '../static/2.jpg',
+                    '../static/3.jpg',
+                    '../static/4.jpg'
+                ],
                 isFrontEnd: false,
                 isBackEnd: false,
                 isMoveEnd: false,
@@ -136,7 +144,22 @@
             },
             toMoveEnd(){
                 alert('跳转')
+            },
+            autoPlay () {
+                this.mark++;
+                if (this.mark === 3) { //当遍历到最后一张图片置零
+                    this.mark = 0
+                }
+            },
+            play () {
+                setInterval(this.autoPlay, 2500)
+            },
+            change (i) {
+                this.mark = i
             }
+        },
+        created () {
+            this.play()
         }
     }
 </script>
@@ -144,10 +167,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-    *{
-        padding:0;
+    * {
+        padding: 0;
         margin: 0;
     }
+
     .menu-box {
         width: 216px;
         height: 444px;
@@ -158,14 +182,17 @@
         float: right;
         position: absolute;
     }
-    .swipe ul{
+
+    .swipe ul {
         margin: 0;
         padding: 0;
     }
-    .swipe li{
+
+    .swipe li {
         margin: 0;
         padding: 0;
     }
+
     .menu-box ul {
         margin: 0;
         padding: 0;
@@ -216,7 +243,7 @@
 
     .content {
         width: 936px;
-        height: 456px;
+        height: 440px;
         background: #fff;
         float: right;
         position: relative;
@@ -224,12 +251,45 @@
 
     .swipe {
         width: 936px;
-        z-index: 9;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
     }
 
-    .content img {
+    .swipeshow {
+        width: 936px;
+        height: 300px;
+    }
+
+    .swipeshow li {
+        position: absolute;
+    }
+
+    .swipeshow img {
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
+        position: absolute;
+        width: 936px;
+        height: 300px;
+    }
+
+    .bar {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        margin: 0 auto;
+        z-index: 10;
+        text-align: center;
+    }
+
+    .bar span {
+        width: 20px;
+        height: 5px;
+        border: 1px solid;
+        background: white;
+        display: inline-block;
+        margin-right: 10px;
     }
 
     .banner {
