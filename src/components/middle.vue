@@ -39,7 +39,7 @@
         </div>
         <div class="content">
             <!--<img src="../assets/2.jpg">-->
-            <div class="swipe">
+            <div class="swipe" @mouseover="stop" @mouseout="move">
                 <div class="swipeshow">
                     <ul>
                         <li v-for="(img123,index) in imgArray" v-show="index===mark" :key="index">
@@ -48,7 +48,7 @@
                     </ul>
                 </div>
                 <div class="bar">
-                    <span v-for="(item,index) in imgArray" :class="{ 'active':index===mark }" :key="index"></span>
+                    <span v-for="(item,index) in imgArray" :class="{ 'active':index===mark }" :key="index" @click="change(index)"></span>
                 </div>
             </div>
             <div class="banner">
@@ -87,6 +87,7 @@
 
         data(){
             return {
+                timer: null,
                 mark: 0,
                 imgArray: [
                     '../static/2.jpg',
@@ -147,7 +148,8 @@
             },
             autoPlay () {
                 this.mark++;
-                if (this.mark === 3) { //当遍历到最后一张图片置零
+                if (this.mark === 3)
+                { //当遍历到最后一张图片置零
                     this.mark = 0
                 }
             },
@@ -156,6 +158,12 @@
             },
             change (i) {
                 this.mark = i
+            },
+            stop(){
+                clearInterval(this.timer)
+            },
+            move(){
+                this.timer = setInterval(this.autoPlay,2500)
             }
         },
         created () {
@@ -205,6 +213,7 @@
         border-bottom-left-radius: 0.5rem;
         border-top-left-radius: 0.5rem;
         font-weight: 900;
+        font-size: 16px;
         list-style: none;
     }
 
