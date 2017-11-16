@@ -42,8 +42,8 @@
             <div class="swipe" @mouseover="stop" @mouseout="move">
                 <div class="swipeshow">
                     <ul>
-                        <li v-for="(img123,index) in imgArray" v-show="index===mark" :key="index">
-                            <img :src='img123'>
+                        <li v-for="(img,index) in imgArray" v-show="index===mark" :key="index">
+                            <img :src='img'>
                         </li>
                     </ul>
                 </div>
@@ -154,7 +154,7 @@
                 }
             },
             play () {
-                setInterval(this.autoPlay, 2500)
+                setInterval(this.autoPlay, 4000)
             },
             change (i) {
                 this.mark = i
@@ -228,6 +228,7 @@
         height: 456px;
         background-color: white;
         position: absolute;
+        font-size: 15px;
         float: left;
         left: 216px;
         top: 0;
