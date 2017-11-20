@@ -7,7 +7,7 @@
             <iMiddle></iMiddle>
         </div>
         <template>
-            <Slider v-model="value" range></Slider>
+
         </template>
 
     </div>

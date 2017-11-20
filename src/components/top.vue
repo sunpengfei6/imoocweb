@@ -98,12 +98,14 @@
 
     .menu1 a:link, .menu1 a:visited {
         text-decoration: none;
-        color: #333;
+        color: #555;
         font-size: large;
     }
 
     .menu1 a:hover, .menu1 a:active {
         color: #000;
+        font-family: Avenir;
+
     }
 
     .search {
