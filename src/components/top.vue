@@ -81,7 +81,7 @@
     }
 
     .img {
-        padding: 8px 30px;
+        padding: 9px 30px;
         float: left;
         display: block;
     }
