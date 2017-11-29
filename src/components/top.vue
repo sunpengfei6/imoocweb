@@ -138,8 +138,8 @@
     .download {
         float: left;
         width: 150px;
-        height: 72px;
-        line-height: 72px;
+        height: 73px;
+        line-height: 73px;
     }
 
     .download a {
