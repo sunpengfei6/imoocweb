@@ -138,7 +138,7 @@
                 this.isMoveEnd = false
             },
             toFrontEnd(){
-                this.$router.push("/menu")
+                this.$router.push("/header")
             },
             toBackEnd(){
                 alert('跳转到后端')
