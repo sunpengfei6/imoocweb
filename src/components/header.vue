@@ -2,9 +2,10 @@
     <div class="header" id="header">
         <div class="header-inner">
             <ul>
-
+                <li></li>
+                <li></li>
             </ul>
-         <div class="subnav">
+         <div class="subnav" >
 
          </div>
         </div>
@@ -31,7 +32,7 @@
         left:0;
         position: absolute;
         z-index: 99;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0,0,0,0.7);
         display: block;
 }
     .subnav{
@@ -41,6 +42,6 @@
         left:0;
         position: absolute;
         z-index: 3;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0,0,0,0.4);
     }
 </style>
